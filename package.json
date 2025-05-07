@@ -9,5 +9,17 @@
     "build": "npm --prefix ./src run build",
     "type-check": "npm --prefix ./src run type-check",
     "test-storybook": "npm --prefix ./src run test-storybook"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^7.1.0",
+    "@mui/material": "^7.1.0",
+    "autoprefixer": "^10.4.21",
+    "laravel-echo": "^2.0.2",
+    "postcss": "^8.5.3",
+    "pusher-js": "^8.4.0",
+    "socket.io-client": "^4.8.1",
+    "tailwindcss": "^4.1.5"
   }
 }
