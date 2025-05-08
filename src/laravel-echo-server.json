@@ -1,35 +1,44 @@
 {
-	"authHost": "http://nginx",
+	"authHost": "http://localhost",
 	"authEndpoint": "/broadcasting/auth",
-	"clients": [],
-	"database": "redis",
+	"clients": [
+		{
+			"appId": "1988084",
+			"key": "f0f22d1d4a9afd410d3f"
+		}
+	],
+	"database": "sqlite",
 	"databaseConfig": {
-		"redis": {
-			"host": "redis",
-			"port": 6379
-		},
+		"redis": {},
 		"sqlite": {
 			"databasePath": "/database/laravel-echo-server.sqlite"
 		}
 	},
 	"devMode": true,
-	"host": null,
-	"port": "6001",
+	"host": "localhost",
+	"port": 6001,
 	"protocol": "http",
 	"socketio": {},
-	"secureOptions": 67108864,
 	"sslCertPath": "",
 	"sslKeyPath": "",
 	"sslCertChainPath": "",
 	"sslPassphrase": "",
 	"subscribers": {
 		"http": true,
-		"redis": true
+		"redis": false
 	},
 	"apiOriginAllow": {
 		"allowCors": true,
 		"allowOrigin": "*",
 		"allowMethods": "GET, POST",
-		"allowHeaders": "Origin, Content-Type, Accept, Authorization, X-Request-With"
-	}
+		"allowHeaders": "Origin, Content-Type, X-Auth-Token, X-Requested-With, Accept, Authorization, X-CSRF-TOKEN, X-Socket-Id"
+	},
+	"cors": {
+		"origin": "*",
+		"methods": ["GET", "POST"],
+		"allowedHeaders": ["Origin", "Content-Type", "Accept", "Authorization", "X-Request-With", "X-Auth-Token", "X-CSRF-TOKEN"]
+	},
+	"allowOrigin": "*",
+	"allowMethods": "GET, POST",
+	"allowHeaders": "Origin, Content-Type, Accept, Authorization, X-Request-With, X-Auth-Token, X-CSRF-TOKEN"
 }

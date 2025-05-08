@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Web\LoginController;
 use App\Http\Controllers\Web\PasswordController;
+use App\Http\Controllers\Web\RaftMeetingController;
 use App\Http\Middleware\VerifyCsrfToken;
 
 /*
@@ -22,6 +23,10 @@ use App\Http\Middleware\VerifyCsrfToken;
 */
 
 Route::group(['middleware' => 'basicauth'], function () {
+    Route::get('/{path?}', [RaftMeetingController::class, 'index'])
+        ->where('path', '.*')
+        ->name('web.top');
+
     Route::fallback(function () {
         return redirect(route('web.top'));
     });
